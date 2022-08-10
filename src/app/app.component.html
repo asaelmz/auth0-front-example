@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <button class="button-navbar" routerLink="public"> Public </button>
+  <button *ngIf="auth.isAuthenticated$ | async"
+          class="button-navbar"
+          routerLink="private"> Private </button>
+  
+  <button *ngIf="!(auth.isAuthenticated$ | async)" 
+            class="button-navbar" 
+            (click)="loginWithRedirect()"> Log in </button>
+  <button *ngIf="auth.isAuthenticated$ | async" 
+            class="button-navbar"
+            (click)="logOut()"> LOG OUT :D </button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

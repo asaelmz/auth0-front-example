@@ -1,0 +1,13 @@
+<div *ngIf="auth.user$ | async as user">
+    <div class="private">
+        Private works
+    </div>
+    <br>
+    <pre>
+        <code class="token">
+            {{user | json}}
+        </code>
+    </pre>
+    
+    
+</div>
